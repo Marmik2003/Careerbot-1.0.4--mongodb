@@ -48,7 +48,7 @@ class ChatInterface(Frame):
 
         self.text_box.configure(state=NORMAL)
         self.text_box.insert(END,
-                             "Welcome to CareerBot v1.0.3 \nI can help you to decide your Career. \nFor more info you can click on help! \nYou Have these Options: \n      10th Pass \n      12th Pass \n")
+                             "Welcome to CareerBot v1.0.4 \nI can help you to decide your Career. \nFor more info you can click on help! \nYou Have these Options: \n      10th Pass \n      12th Pass \n")
         self.text_box.configure(state=DISABLED)
         self.text_box.see(END)
 
@@ -126,12 +126,12 @@ class ChatInterface(Frame):
     def send_audmsg_insert(self):
         r1 = sr.Recognizer()
         r2 = sr.Recognizer()
-        playsound('sfx/vastart.mp3')
+        playsound('vastart.mp3')
         with sr.Microphone() as source:
             audio = r2.listen(source)
         text = r1.recognize_google(audio)
         self.entry_field.insert(END, text)
-        playsound('sfx/vastop.mp3')
+        playsound('vastop.mp3')
 
 root = Tk()
 
