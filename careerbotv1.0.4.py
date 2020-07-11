@@ -128,6 +128,7 @@ class ChatInterface(Frame):
         r2 = sr.Recognizer()
         playsound('vastart.mp3')
         with sr.Microphone() as source:
+            r2.adjust_for_ambient_noise(source)
             audio = r2.listen(source)
         text = r1.recognize_google(audio)
         self.entry_field.insert(END, text)
