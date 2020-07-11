@@ -8,8 +8,8 @@ collection = db["res_data"]
 
 
 def insertdata(otpt):
-    inputdata = "\"" + inptvar.get().lower() + "\""
-    outputdata = '"' + otptEntry.get('1.0', END+'-1c') + '"'
+    inputdata = inptvar.get().lower()
+    outputdata = otptEntry.get('1.0', END+'-1c')
     try:
         train_dict = {'input':inputdata, 'output':outputdata}
         collection.insert_one(train_dict)
@@ -39,7 +39,7 @@ def shortcuting(event):
         insertdata(inptvar)
 
 
-sendButton = Button(tkWindow, text="Save", command=insertdata).grid(row=2, column=1)
+sendButton = Button(tkWindow, text="Save", command=lambda : insertdata(None)).grid(row=2, column=1)
 tkWindow.bind("<Key>", shortcuting)
 
 tkWindow.mainloop()
