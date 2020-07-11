@@ -30,7 +30,7 @@ inptvar = StringVar()
 inptEntry = Entry(tkWindow, width=50, textvariable=inptvar).grid(row=0, column=1)
 
 otptLabel = Label(tkWindow, text="Output").grid(row=1, column=0)
-otptEntry = Text(tkWindow, width=30, height=12)
+otptEntry = Text(tkWindow, width=25, height=10)
 otptEntry.grid(row=1, column=1)
 otptEntry.configure(font=('Courier'))
 
